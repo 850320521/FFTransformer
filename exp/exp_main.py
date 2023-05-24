@@ -516,8 +516,8 @@ class Exp_Main(Exp_Basic):
 
         mae, mse, rmse, mape, mspe = metric(preds, trues)
 
-        preds_un = test_data.inverse_transform(preds)
-        trues_un = test_data.inverse_transform(trues)
+        preds_un = test_data.inverse_transform(preds.reshape(-1,1))
+        trues_un = test_data.inverse_transform(trues.reshape(-1,1))
         mae_un, mse_un, rmse_un, mape_un, mspe_un = metric(preds_un, trues_un)
 
         losses = {
