@@ -82,7 +82,7 @@ class EarlyStopping:
         pickle.dump(self.model_setup.__dict__, open(path + '/' + 'model_setup.pickle', 'wb'))
         pickle.dump({'epoch': epoch, 'val_loss_min': val_loss, 'val_losses': self.val_losses},
                     open(path + '/' + 'epoch_loss.pickle', 'wb'))
-        with open(path + '/' + 'model_setup.txt', 'w'，encoding='utf-8') as f:
+        with open(path + '/' + 'model_setup.txt', 'w',encoding='utf-8') as f:
             f.write('Epoch: ' + str(epoch + 1) + '\nValLoss: ' + str(val_loss))
             f.write('\n\n__________________________________________________________\n\n')
             for key, value in self.model_setup.__dict__.items():
